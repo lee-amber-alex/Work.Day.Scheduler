@@ -6,7 +6,7 @@ body {
 
 .container {
   border-left: 1px solid black;
-  border-right: 1px solid black;
+  
 }
 textarea {
   background: transparent;
@@ -37,11 +37,11 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 50px;
-  border-top: 1px solid black;
+  
 }
 .col-md-2 {
-  border-right: 1px solid black;
   text-align: center;
+  border-top: 1px solid black;
   padding: 15px;
   font-weight: bold;
 }
@@ -53,17 +53,17 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #7A7A7A;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #D3DAEC;
   color: white;
 }
 
