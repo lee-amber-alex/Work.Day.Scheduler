@@ -12,7 +12,9 @@ button{
 .container {
   border-left: 1px solid black;
   border-right: 1px solid black;
+  border-bottom: 1px solid black;
   margin-top: 30%;
+  margin-bottom: 30px;
 }
 textarea {
   background: transparent;
@@ -42,7 +44,16 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 50px;
+}
+
+#task{
+  text-align: center;
+  background-color: #EFEFEF;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  padding: 15px;
+  font-weight: bolder;
+
 }
 .col-md-2 {
   text-align: center;
@@ -68,7 +79,7 @@ textarea {
 }
 
 .future {
-  background-color: #d3daec;
+  background-color: #46A049;
   color: white;
 }
 
