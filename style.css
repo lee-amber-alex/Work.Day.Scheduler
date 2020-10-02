@@ -1,4 +1,5 @@
 body {
+  box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -6,6 +7,9 @@ body {
 
 .container {
   border-left: 1px solid black;
+  margin-top: 25%;
+  clear: both;
+  
   
 }
 textarea {
@@ -23,6 +27,7 @@ textarea {
   color: white;
   border-radius: 0;
   border-bottom: 10px solid black;
+
 }
 
 .description {
