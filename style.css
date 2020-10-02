@@ -5,12 +5,14 @@ body {
   line-height: 1;
 }
 
+button{
+  border: none;
+}
+
 .container {
   border-left: 1px solid black;
-  margin-top: 25%;
-  clear: both;
-  
-  
+  border-right: 1px solid black;
+  margin-top: 30%;
 }
 textarea {
   background: transparent;
@@ -27,7 +29,6 @@ textarea {
   color: white;
   border-radius: 0;
   border-bottom: 10px solid black;
-
 }
 
 .description {
@@ -42,7 +43,6 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 50px;
-  
 }
 .col-md-2 {
   text-align: center;
@@ -58,7 +58,7 @@ textarea {
 }
 
 .past {
-  background-color: #7A7A7A;
+  background-color: #7a7a7a;
   color: white;
 }
 
@@ -68,7 +68,7 @@ textarea {
 }
 
 .future {
-  background-color: #D3DAEC;
+  background-color: #d3daec;
   color: white;
 }
 
