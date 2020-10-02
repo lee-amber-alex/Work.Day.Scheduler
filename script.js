@@ -25,15 +25,15 @@ $(document).ready(function () {
   // 3. Click on Task:
   $(inputEl).on("click", function (event) {
     // a. If Input is equal to now time, color white.
-    if (new Date().getTime(event) === now);
-    taskEl.addClass(".present");
+    if (event.timeStamp === now);
+    taskEl.addClass("present");
     // b. If Input is less than now time, color grey.
-    if (new Date().getTime(event) < now);
-    taskEl.addClass(".past");
+    if (event.timeStamp < now);
+    taskEl.addClass("past");
     // c. If Input is greater than now time, color green.
-    if (new Date().getTime(event) > now);
-    taskEl.addClass(".future");
-    console.log(new Date().getTime(event));
+    if (event.timeStamp > now);
+    taskEl.addClass("future");
+   
   });
 
   $(taskInput) = function () {
