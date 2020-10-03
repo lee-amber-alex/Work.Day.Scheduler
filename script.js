@@ -15,40 +15,57 @@ let colmd10El = $(".col-md-10");
 let inputEl = $("input");
 let buttonEl = $("button");
 let taskEl = $(".task");
+let timeblocksEl = $("section");
 
-let now = new Date(Date.now());
+let date = new Date();
+let now = date.toDateString();
+let time = date.toLocaleTimeString();
 
 $(document).ready(function () {
   // 1. Open planner, current time and day displays at the top.
-  currentDayEl.append(now);
+  currentDayEl.append(now + ",  " + time); 
 
-  // 3. Click on Task:
+  // 2. & 3. Click on Task:
   $(inputEl).on("click", function (event) {
-    // a. If Input is equal to now time, color white.
-    if (event.timeStamp === now);
+      let target = $(event.target.task);
+    // a. If .timeblocks is equal to now time, color white. 
+    // If value of .timeblocks is === now, event.target to .present
+    if (parseInt(timeblocksEl) === time);
+
+    console.log(parseInt(timeblocksEl));
+
     taskEl.addClass("present");
-    // b. If Input is less than now time, color grey.
-    if (event.timeStamp < now);
+    // b. If .timeblocks is less than now time, color grey.
+    // If value of .timeblocks is < now, event.target to .past
+    if (parseInt(timeblocksEl) < time);
     taskEl.addClass("past");
-    // c. If Input is greater than now time, color green.
-    if (event.timeStamp > now);
+
+    // c. If .timeblocks is greater than now time, color green.
+     // If value of .timeblocks is > now, event.target to .future
+    if (parseInt(timeblocksEl) > time);
+
     taskEl.addClass("future");
    
   });
 
+  
+  // 4. Click save to store to local storage.
+  $(buttonEl).on("click", function (event) {
+    // If save button is clicked, target <input> data, 
+    // possible to chain event.target with event.data?
+    let target = $(
+      event.target.data
+    ); 
+    target.is(taskEl);
+    let task = $(taskEl.data());
+    localStorage.setItem("storedTask", task);
+    console.log(task);
+  });
+  
+  // Where to place?
   $(taskInput) = function () {
     let task = localStorage.getItem("storedTask");
   };
 
-  // 4. Click save to store to local storage.
-  $(buttonEl).on("click", function (event) {
-    let target = $(
-      event.target.data
-    ); /*possible to chain event.target with event.data? */
-    target.is(taskEl);
-    let task = $(taskEl).value;
-    localStorage.setItem("storedTask", task);
-    console.log(task);
-  });
   // 5. Refresh and data still persists.
 });
