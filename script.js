@@ -13,11 +13,9 @@
 let currentDayEl = $("#currentDay");
 let leadEl = $(".lead");
 let containerEl = $(".container");
-let colmd8El = $(".col-md-8");
 let inputEl = $("input");
 let buttonEl = $(".saveBtn");
-let taskEl = $(".task");
-let timeblocksEl = $("section");
+
 
 
 let timeNow = moment().format("lll");
