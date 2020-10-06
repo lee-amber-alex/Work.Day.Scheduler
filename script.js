@@ -1,101 +1,77 @@
 /// 1. Open planner, current time and day displays at the top.
 // 2. Time blocks start at 7AM to 6PM.
-// 3. Click on Task:
+// 3. Tasks:
 // a. If .timeblocks is equal to now time, color white.
 // If value of .timeblocks is === now, event.target to .present
-
 // b. If .timeblocks is less than now time, color grey.
 // If value of .timeblocks is < now, event.target to .past
-
 // c. If .timeblocks is greater than now time, color green.
 // If value of .timeblocks is > now, event.target to .future
-// a. If Input is equal to now time, color white.
-// b. If Input is less than now time, color grey.
-// c. If Input is greater than now time, color green.
 // 4. Click save to store to local storage.
 // 5. Refresh and data still persists.
 
 let currentDayEl = $("#currentDay");
 let leadEl = $(".lead");
 let containerEl = $(".container");
-let colmd2El = $(".col-md-2");
-let colmd10El = $(".col-md-10");
+let colmd8El = $(".col-md-8");
 let inputEl = $("input");
 let buttonEl = $("button");
 let taskEl = $(".task");
 let timeblocksEl = $("section");
 let timeEl = [
-  "7:00",
-  "8:00",
-  "9:00",
-  "10:00",
-  "11:00",
-  "12:00",
-  "1:00",
-  "2:00",
-  "3:00",
-  "4:00",
-  "5:00",
-  "6:00",
+  "7:00AM",
+  "8:00AM",
+  "9:00AM",
+  "10:00AM",
+  "11:00AM",
+  "12:00PM",
+  "1:00PM",
+  "2:00PM",
+  "3:00PM",
+  "4:00PM",
+  "5:00PM",
+  "6:00PM",
 ];
 
-let timeNow = moment().format('lll');
-
+let timeNow = moment().format("lll");
+// 1. Open planner, current time and day displays at the top.
 currentDayEl.append(timeNow);
+console.log(moment().format("LT"));
+console.log($(inputEl));
 
 $(document).ready(function () {
-  // 1. Open planner, current time and day displays at the top.
-
-  // 2. & 3. Click on Task:
-  $(inputEl).on("click", function () {
-    // a. If .timeblocks is equal to now time, color white.
-    // If value of .timeblocks is === now, event.target to .present
-    console.log($(timeEl));
-    
-    timeEl.forEach(function (element) {
-
-      console.log(moment("section").hour(Number))
-
-      if (parseFloat($("section").text()) === timeNow) {
-        taskEl.addClass("present");
-      } 
-      else if (parseFloat($("section").text()) < timeNow) {
-        taskEl.addClass("past");
-      } 
-      else {
-        taskEl.addClass("future");
-      }
-
-    });
+  $(timeEl).each(function () {
+    if (moment().format("LT") === timeNow) {
+      colmd8El.addClass(".present");
+    } else if (moment().format("LT") < timeNow) {
+      colmd8El.addClass(".past");
+    } else {
+      colmd8El.addClass(".future");
+    }
   });
-
-
 
   // 4. Click save to store to local storage.
   $(buttonEl).on("click", function (event) {
-    let task = $(inputEl.data());
-    let storedTask = task.toString();
-
-    console.log(storedTask);
+    event.preventDefault();
     // If save button is clicked, target <input> data,
-    // possible to chain event.target with event.data?
-    $("input").each(function () {
+    $(inputEl).each(function () {
+      let storedTask = $(inputEl).text();
+      console.log($(inputEl).text());
+
       localStorage.setItem("storedTask", storedTask);
+      
+      $(taskInput) = function () {
+        let task = localStorage.getItem("storedTask");
+        if (task === "") {
+          return;
+        }
+      };
     });
+    taskInput();
   });
+  // 5. Refresh and data still persists.
 
   // Where to place?**************
 
-  // $(taskInput) = function () {
-  //   let task = localStorage.getItem("storedTask");
-  // };
-
-  // 5. Refresh and data still persists.
-
   // POSSIBLE FUNCTIONS:
-
-  console.log(parseInt($("#7").text())); /* result is 7 */
-  console.log(parseFloat($("#7").text())); /* result is 7 */
-  console.log($("section").text());
-  console.log(parseFloat($("section").text()));
 });
