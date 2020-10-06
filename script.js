@@ -15,23 +15,10 @@ let leadEl = $(".lead");
 let containerEl = $(".container");
 let colmd8El = $(".col-md-8");
 let inputEl = $("input");
-let buttonEl = $("button");
+let buttonEl = $(".saveBtn");
 let taskEl = $(".task");
 let timeblocksEl = $("section");
-let timeEl = [
-  "7:00AM",
-  "8:00AM",
-  "9:00AM",
-  "10:00AM",
-  "11:00AM",
-  "12:00PM",
-  "1:00PM",
-  "2:00PM",
-  "3:00PM",
-  "4:00PM",
-  "5:00PM",
-  "6:00PM",
-];
+
 
 let timeNow = moment().format("lll");
 // 1. Open planner, current time and day displays at the top.
@@ -40,38 +27,33 @@ console.log(moment().format("LT"));
 console.log($(inputEl));
 
 $(document).ready(function () {
-  $(timeEl).each(function () {
-    if (moment().format("LT") === timeNow) {
-      colmd8El.addClass(".present");
-    } else if (moment().format("LT") < timeNow) {
-      colmd8El.addClass(".past");
+  $("input").each(function () {
+    console.log(this)
+    
+    var timeNow = parseInt($(this).attr("id"));
+    var current = moment().hour();
+    console.log(localStorage.getItem(timeNow));
+      
+    $(this).val(localStorage.getItem(timeNow) || "");
+
+    if (current === timeNow) {
+      $(this).addClass("present");
+    } else if (timeNow < current) {
+      $(this).addClass("past");
     } else {
-      colmd8El.addClass(".future");
+      $(this).addClass("future");
     }
   });
 
   // 4. Click save to store to local storage.
   $(buttonEl).on("click", function (event) {
     event.preventDefault();
-    // If save button is clicked, target <input> data,
-    $(inputEl).each(function () {
-      let storedTask = inputEl.value;
-      console.log(inputEl.value);
+   
+    var task= $(this).siblings("input").val()
+    var hour = $(this).siblings("input").attr("id")
 
-      localStorage.setItem("storedTask", storedTask);
+    localStorage.setItem(hour, task);
 
-      $(taskInput) = function () {
-        let task = localStorage.getItem("storedTask");
-        if (task === "") {
-          return;
-        }
-      };
-    });
-    taskInput();
   });
-  // 5. Refresh and data still persists.
 
-  // Where to place?**************
-
-  // POSSIBLE FUNCTIONS:
 });
