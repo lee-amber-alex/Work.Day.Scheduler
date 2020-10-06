@@ -38,14 +38,10 @@ let timeEl = [
   "5:00",
   "6:00",
 ];
-var moment = require("moment");
-let date = new Date();
-let now = date.toDateString();
-// let timeNow = date.toLocaleTimeString();
-let timeNow = moment().format('lll');
-console.log(moment().format('lll'));
 
-currentDayEl.append(now + ",  " + timeNow);
+let timeNow = moment().format('lll');
+
+currentDayEl.append(timeNow);
 
 $(document).ready(function () {
   // 1. Open planner, current time and day displays at the top.
