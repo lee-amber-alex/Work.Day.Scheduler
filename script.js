@@ -55,11 +55,11 @@ $(document).ready(function () {
     event.preventDefault();
     // If save button is clicked, target <input> data,
     $(inputEl).each(function () {
-      let storedTask = $(inputEl).text();
+      let storedTask = $(inputEl).value;
       console.log($(inputEl).text());
 
       localStorage.setItem("storedTask", storedTask);
-      
+
       $(taskInput) = function () {
         let task = localStorage.getItem("storedTask");
         if (task === "") {
