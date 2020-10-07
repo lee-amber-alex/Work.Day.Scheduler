@@ -13,13 +13,15 @@ Access Work.Day.Scheduler Repository [here.](https://github.com/lee-amber-alex/W
 
 ## Usage  
 
-### Home Page:
+### Date and Time:
 
 ![Date and Time.](screenshots/DateAndTimeStart.png)  
 
 ### Time-block:
 
 ![Color Scheme.](screenshots/ColorTime.png)  
+
+![Color Scheme.](screenshots/ColorTime2.png)  
 
 ### Saved tasks:
 
