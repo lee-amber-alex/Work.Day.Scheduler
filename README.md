@@ -15,7 +15,7 @@ Access Work.Day.Scheduler Repository [here.](https://github.com/lee-amber-alex/W
 
 ### Date and Time:
 
-![Date and Time.](screenshots/DateAndTimeStart.png)  
+![Date and Time.](screenshots/DateandTimeStart.png)  
 
 ### Time-block:
 
