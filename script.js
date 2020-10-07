@@ -8,7 +8,6 @@
 // 5. Refresh and data still persists.
 
 let currentDayEl = $("#currentDay");
-let leadEl = $(".lead");
 let containerEl = $(".container");
 let inputEl = $("input");
 let buttonEl = $(".saveBtn");
