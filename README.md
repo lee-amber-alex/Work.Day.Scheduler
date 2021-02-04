@@ -21,7 +21,8 @@ No install required.
 ``` 
 
 ## Usage
-Access Work.Day.Scheduler[here.](https://lee-amber-alex.github.io/Work.Day.Scheduler/) 
+Access Work.Day.Scheduler [here.](https://lee-amber-alex.github.io/Work.Day.Scheduler/)  
+ 
 Access the project repository  [here.](https://github.com/lee-amber-alex/Work.Day.Scheduler)  
 
 #### Date and Time:
